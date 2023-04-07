@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.avril07.ONF.MainONF;
 import org.example.avril07.Recette.MainRecettes;
 import org.example.mars31.TpBonus.GestionNote;
 
@@ -8,7 +9,6 @@ import org.example.mars31.TpBonus.GestionNote;
 public class Main {
     public static void main(String[] args) {
 
-        MainRecettes.main();
-
+        MainONF.main();
     }
 }

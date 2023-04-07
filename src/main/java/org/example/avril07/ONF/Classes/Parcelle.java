@@ -2,10 +2,11 @@ package org.example.avril07.ONF.Classes;
 
 import org.example.avril07.ONF.Enums.TypeArbre;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Parcelle {
-    private List<Arbre> arbres;
+    private List<Arbre> arbres= new ArrayList<>();
     private int parcelle ;
     private  static int cpt=0;
 
