@@ -1,4 +1,4 @@
-package org.example.tableau2DImensions;
+package org.example.mars31.tableau2Dimensions.tableau2DImensions;
 
 public class Tableau2Dimensions {
     public static void DiagonaleMatrice (){

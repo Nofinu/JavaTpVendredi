@@ -1,4 +1,4 @@
-package org.example.TpBonus;
+package org.example.mars31.TpBonus;
 
 import java.util.Arrays;
 import java.util.Random;

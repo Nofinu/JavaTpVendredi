@@ -1,4 +1,4 @@
-package org.example.tableau2DImensions.CarreMagique;
+package org.example.mars31.tableau2Dimensions.tableau2DImensions.CarreMagique;
 
 import java.lang.reflect.Array;
 import java.util.Arrays;

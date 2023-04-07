@@ -1,4 +1,4 @@
-package org.example.tableau2DImensions.tableauRegulier;
+package org.example.mars31.tableau2Dimensions.tableau2DImensions.tableauRegulier;
 
 public class TableauRegulier {
 
