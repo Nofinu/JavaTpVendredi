@@ -15,8 +15,8 @@ public class Main {
 
         //MainONF.main();
         //MainPapeterie.main();
-        //MainStream.main();
+        MainStream.main();
         //MainExeption.main();
-        MainDesignPatern.main();
+        //MainDesignPatern.main();
     }
 }

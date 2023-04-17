@@ -11,11 +11,7 @@ public class MainExeption {
 
     static List<Integer> liste = new ArrayList<>();
     public static void main() {
-        String[] tab = {"10","20","30","abc","40","50"};
-
         addEntry();
-
-
 
         try{
             if(liste.size() ==0){

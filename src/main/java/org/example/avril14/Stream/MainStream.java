@@ -48,14 +48,16 @@ public class MainStream {
         student5.addCourse(course3);
         student5.addCourse(course2);
 
-        List<Student> students = Arrays.asList(student1,student2,student3,student4);
+        List<Student> students = Arrays.asList(student1,student2,student3,student4,student5);
 
 
         //student age>20
         List<Student>student20 = students.stream()
-                .filter(s -> s.getAge()>20)
+                .filter(s -> s.getAge()>=20)
                 .collect(Collectors.toList());
-        System.out.println(student20);
+        for (Student s:student20) {
+            System.out.println(s.getName());
+        }
 
         // name teacher
         List<String> nameTeacher = teachers.stream()
@@ -99,6 +101,7 @@ public class MainStream {
         System.out.println(studentMap);
 
 
+
         //CourseByStudents
         List<Course> CourseByStudents = students.stream()
                 .flatMap(s->s.getCourse().stream())
@@ -116,6 +119,9 @@ public class MainStream {
         Map<Integer,Teacher> teacherByYear = new HashMap<>();
         teachers.stream().forEach(t -> teacherByYear.put(t.getStratDate(),t));
         System.out.println(teacherByYear);
+        for(Map.Entry<Integer,Teacher> entry : teacherByYear.entrySet()){
+            System.out.println(entry.getKey()+" : "+entry.getValue());
+        }
 
         //courseStudent1820
         List<Course> courseStudent1820 = students.stream()
@@ -125,5 +131,53 @@ public class MainStream {
                 .sorted(Comparator.comparing(Course::getName))
                 .collect(Collectors.toList());
         System.out.println(courseStudent1820);
+
+        //compteur nombre etudiant par cours
+        Map<Course,Integer> numberStudent = new HashMap<>();
+                students.stream()
+                .flatMap(s -> s.getCourse().stream())
+                .forEach(c -> {
+                    if(numberStudent.containsKey(c)){
+                        numberStudent.put(c,numberStudent.get(c)+1);
+                    }
+                    else{
+                        numberStudent.put(c,1);
+                    }
+                });
+        System.out.println("number student :");
+
+        for (Course c :courses) {
+            System.out.println( c.getName() +" : "+numberStudent.get(c));
+        }
+
+        //nombre de cours moyen etudiant20
+        List<Integer> nbrCourse=student20.stream()
+                .map(s -> s.getCourse().size())
+                .collect(Collectors.toList());
+        int somme =0;
+        for (Integer i:nbrCourse) {
+            somme += i;
+        }
+        Integer mean = somme/ student20.size();
+        System.out.println("nbr de cours moyen pour les etudiant de 20 ans ou plus : "+mean);
+
+        //student qui suivent tout les cours
+        List<Student> studentAllCOurse = students.stream()
+                .filter(s-> {
+                    boolean test = true;
+                    for (Course c:courses) {
+                        if(!s.getCourse().contains(c)){
+                            test = false;
+                        }
+                    }
+                    return test;
+                })
+                .collect(Collectors.toList());
+        System.out.println("etudiant participant a tout les cours :");
+        for (Student s:studentAllCOurse) {
+            System.out.println(s.getName());
+        }
+
+        //
     }
 }
