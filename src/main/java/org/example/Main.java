@@ -2,6 +2,7 @@ package org.example;
 
 import org.example.avril07.ONF.MainONF;
 import org.example.avril07.Recette.MainRecettes;
+import org.example.avril14.DesignPatern.MainDesignPatern;
 import org.example.avril14.Exeption.MainExeption;
 import org.example.avril14.Papeterie.MainPapeterie;
 import org.example.avril14.Stream.MainStream;
@@ -15,6 +16,7 @@ public class Main {
         //MainONF.main();
         //MainPapeterie.main();
         //MainStream.main();
-        MainExeption.main();
+        //MainExeption.main();
+        MainDesignPatern.main();
     }
 }
